@@ -6,4 +6,10 @@
     <string name="login_signup_hint">Don\'t have an account? Sign Up</string>
     <string name="login">Login</string>
     <string name="app_name">SyndiSync</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="login2">Login</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone number</string>
 </resources>

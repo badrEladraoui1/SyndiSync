@@ -14,4 +14,8 @@
     <!--colros for card-->
     <color name="whiteCardColor">#fff</color>
     <color name="blue">#0000FF</color>
+
+    <!--colors for me-->
+    <color name="skyBlue">#01b5d8</color>
+
 </resources>
