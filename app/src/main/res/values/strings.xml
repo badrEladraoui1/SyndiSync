@@ -12,4 +12,8 @@
     <string name="login2">Login</string>
     <string name="name">Name</string>
     <string name="phone_number">Phone number</string>
+    <string name="registre">Registre</string>
+    <string name="log">Login</string>
+    <string name="imagex">imagex</string>
+    <string name="i_need_an_account_sign_up">i need an account Sign Up</string>
 </resources>

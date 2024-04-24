@@ -13,7 +13,7 @@
         android:theme="@style/Theme.SyndiSync"
         tools:targetApi="31" >
         <activity
-            android:name=".MainActivity"
+            android:name=".Login"
             android:exported="true"
             android:theme="@style/Theme.SyndiSync.MySplash" >
             <intent-filter>
@@ -21,6 +21,16 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SyndiSync.MySplash" >
+        </activity>
+        <activity
+            android:name=".Register"
+            android:exported="true"
+            android:theme="@style/Theme.SyndiSync.MySplash" >
         </activity>
     </application>
 

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/sky_blue_house"
-    >
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -28,6 +25,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="10sp"
         android:orientation="vertical">
 
 
@@ -35,38 +33,50 @@
             android:id="@+id/editTextTextEmailAddress2"
             android:layout_width="match_parent"
             android:layout_height="74dp"
-            android:hint="@string/name"
+            android:layout_margin="10sp"
+            android:autofillHints="Name"
+            android:background="@drawable/button_background"
             android:ems="10"
-            android:textStyle="bold"
+            android:hint="@string/name"
             android:inputType="text"
-            android:autofillHints="Name" />
+            android:padding="10sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextTextEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="74dp"
+            android:layout_margin="10sp"
             android:autofillHints="EmailAddress"
+            android:background="@drawable/button_background"
             android:ems="10"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
+            android:padding="10sp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="74dp"
-            android:textStyle="bold"
-            android:hint="@string/phone_number"
+            android:layout_margin="10sp"
+            android:background="@drawable/button_background"
             android:ems="10"
-            android:inputType="phone" />
+            android:hint="@string/phone_number"
+            android:inputType="phone"
+            android:padding="10sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
             android:layout_width="match_parent"
             android:layout_height="74dp"
+            android:layout_margin="10sp"
+            android:background="@drawable/button_background"
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
+            android:padding="10sp"
             android:textStyle="bold" />
 
         <TextView
@@ -88,9 +98,9 @@
             android:background="@drawable/button_background"
             android:padding="20sp"
             android:text="@string/register"
+            android:textColor="@color/skyBlue"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/skyBlue" />
+            android:textStyle="bold" />
 
 
     </LinearLayout>
