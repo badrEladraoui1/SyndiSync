@@ -8,14 +8,16 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="414dp"
-        android:layout_height="196dp"
+        android:layout_height="73dp"
         android:layout_gravity="center"
         android:src="@drawable/logo_shape" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
+        android:background="@drawable/blue_bg"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="63dp"
         android:gravity="center"
         android:text="@string/register"
         android:textColor="@color/white"
@@ -28,11 +30,10 @@
         android:layout_margin="10sp"
         android:orientation="vertical">
 
-
         <EditText
-            android:id="@+id/editTextTextEmailAddress2"
+            android:id="@+id/editTextTextName"
             android:layout_width="match_parent"
-            android:layout_height="74dp"
+            android:layout_height="55dp"
             android:layout_margin="10sp"
             android:autofillHints="Name"
             android:background="@drawable/button_background"
@@ -40,12 +41,14 @@
             android:hint="@string/name"
             android:inputType="text"
             android:padding="10sp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/black"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextTextEmailAddress"
             android:layout_width="match_parent"
-            android:layout_height="74dp"
+            android:layout_height="55dp"
             android:layout_margin="10sp"
             android:autofillHints="EmailAddress"
             android:background="@drawable/button_background"
@@ -53,34 +56,68 @@
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:padding="10sp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/black"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
-            android:layout_height="74dp"
+            android:layout_height="55dp"
             android:layout_margin="10sp"
             android:background="@drawable/button_background"
             android:ems="10"
             android:hint="@string/phone_number"
             android:inputType="phone"
             android:padding="10sp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editApartmentNumber"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_margin="10sp"
+            android:background="@drawable/button_background"
+            android:ems="10"
+            android:hint="Apartment number"
+            android:inputType="phone"
+            android:padding="10sp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/editBuildingNumber"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_margin="10sp"
+            android:background="@drawable/button_background"
+            android:ems="10"
+            android:hint="Building number"
+            android:inputType="phone"
+            android:padding="10sp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/black"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/editTextTextPassword"
             android:layout_width="match_parent"
-            android:layout_height="74dp"
+            android:layout_height="55dp"
             android:layout_margin="10sp"
             android:background="@drawable/button_background"
             android:ems="10"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="10sp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/black"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/backToSignIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5sp"
@@ -101,7 +138,6 @@
             android:textColor="@color/skyBlue"
             android:textSize="20sp"
             android:textStyle="bold" />
-
 
     </LinearLayout>
 

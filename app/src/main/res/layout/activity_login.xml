@@ -1,65 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/loginParent"
-    android:orientation="vertical">
-    <!--    tools:context="com.example.syndisync.LoginActivity"-->
-    <ScrollView style="@style/parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/sky_blue_house">
 
-        <RelativeLayout style="@style/parent">
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="414dp"
+        android:layout_height="196dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo_shape"
+        android:contentDescription="@string/imagex" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:weightSum="12">
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="300dp"
+        android:layout_gravity="center"
+        android:layout_height="75dp"
+        android:gravity="center"
+        android:text="@string/login2"
+        android:textColor="@color/white"
+        android:background="@drawable/blue_bg"
+        android:textSize="32sp"
+        android:textStyle="bold" />
 
-                <LinearLayout
-                    style="@style/parent"
-                    android:layout_weight="3"
-                    android:background="@drawable/login_shape_bk"
-                    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-                    <ImageView
-                        style="@style/parent"
-                        android:background="@drawable/ic_login_bk"
-                        android:contentDescription="login background" />
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            android:layout_margin="10sp"
+            android:autofillHints="EmailAddress"
+            android:background="@drawable/button_background"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
+            android:padding="10sp"
+            android:textStyle="bold"
+            android:drawableEnd="@drawable/baseline_done_all_24"
+            />
 
-                </LinearLayout>
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="74dp"
+            android:layout_margin="10sp"
+            android:background="@drawable/button_background"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:padding="10sp"
+            android:drawableEnd="@drawable/password_magic"
+            android:textStyle="bold"
+            android:autofillHints="" />
 
-            </LinearLayout>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:text="@string/forgot_password"
+            android:textColor="#077DA8"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="30dp"
-                android:orientation="vertical">
+        <TextView
+            android:id="@+id/redToSignUp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5sp"
+            android:text="@string/i_need_an_account_sign_up"
+            android:textColor="#077DA8"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:textStyle="bold" />
 
-                <TextView
-                    style="@style/headerText"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="40dp"
-                    android:text="App Snipp" />
 
-                <include layout="@layout/layout_register" />
-<!--                include layout_register.xml-->
+        <Button
+            android:id="@+id/signIn"
+            android:layout_width="200sp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30sp"
+            android:background="@drawable/button_background"
+            android:padding="20sp"
+            android:text="@string/log"
+            android:textColor="@color/skyBlue"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
-            </LinearLayout>
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="30dp"
-                android:src="@android:drawable/ic_menu_close_clear_cancel" />
-        </RelativeLayout>
+    </LinearLayout>
 
-    </ScrollView>
-
-</RelativeLayout>
+</LinearLayout>

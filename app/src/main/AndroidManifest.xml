@@ -25,12 +25,12 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:theme="@style/Theme.SyndiSync.MySplash" >
+            android:theme="@style/Theme.AppCompat" >
         </activity>
         <activity
             android:name=".Register"
             android:exported="true"
-            android:theme="@style/Theme.SyndiSync.MySplash" >
+            android:theme="@style/Theme.AppCompat" >
         </activity>
     </application>
 

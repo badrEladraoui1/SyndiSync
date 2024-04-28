@@ -2,12 +2,13 @@ package com.example.syndisync;
 
 import static android.content.ContentValues.TAG;
 
-import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -24,6 +25,7 @@ public class Login extends AppCompatActivity {
     Button signInButton;
     EditText email, password;
     String emailContent, passwordContent;
+    TextView signUpRedirectionText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,11 +39,21 @@ public class Login extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
-        setContentView(R.layout.activity_login_2);
+        setContentView(R.layout.activity_login);
 
         signInButton = findViewById(R.id.signIn);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
+        signUpRedirectionText = findViewById(R.id.redToSignUp);
+
+        // redirect to sign up page from login page
+        signUpRedirectionText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Login.this, Register.class));
+                Log.w(TAG, "Redirecting to sign up page");
+            }
+        });
 
 
         signInButton.setOnClickListener(new View.OnClickListener() {
@@ -49,7 +61,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 emailContent = email.getText().toString();
                 passwordContent = password.getText().toString();
-                Log.w(TAG , emailContent);
+                Log.w(TAG, emailContent);
 
                 mAuth.signInWithEmailAndPassword(emailContent, passwordContent)
                         .addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
