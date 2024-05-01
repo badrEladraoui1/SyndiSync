@@ -4,6 +4,7 @@ import static android.content.ContentValues.TAG;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -30,7 +31,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        //        // Handle the splash screen transition.
+        // Handle the splash screen transition.
         SplashScreen splashScreen = SplashScreen.installSplashScreen(this);
 
         super.onCreate(savedInstanceState);
@@ -71,6 +72,16 @@ public class Login extends AppCompatActivity {
                                     // Sign in success, update UI with the signed-in user's information
                                     Log.d(TAG, "signInWithEmail:success");
                                     Toast.makeText(getApplicationContext(), "Sign in successful", Toast.LENGTH_SHORT).show();
+
+                                    // redirect to home page after 3 seconds
+                                    new Handler().postDelayed(
+                                            new Runnable() {
+                                                public void run() {
+                                                    startActivity(new Intent(Login.this, HomePage.class));
+                                                }
+                                            },
+                                            3000);
+
 
                                 } else {
                                     // If sign in fails, display a message to the user.
