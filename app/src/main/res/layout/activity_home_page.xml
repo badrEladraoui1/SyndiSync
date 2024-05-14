@@ -19,11 +19,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:textColor="#6d98b8"
         android:padding="10dp"
-        android:text="HOME PAGE"/>
+        android:text="HOME PAGE"
+        android:textColor="#6d98b8"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -43,11 +43,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:textStyle="bold"
-                android:textSize="18sp"
                 android:background="@drawable/card_background"
-                android:text="Messages" />
+                android:gravity="center"
+                android:text="Messages"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
 
@@ -61,11 +61,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:textStyle="bold"
                 android:background="@drawable/card_background"
+                android:gravity="center"
+                android:text="Manage Tasks"
                 android:textSize="18sp"
-                android:text="Manage Tasks" />
+                android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
 
@@ -79,11 +79,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:textStyle="bold"
                 android:background="@drawable/card_background"
+                android:gravity="center"
+                android:text="Weather Forecast"
                 android:textSize="18sp"
-                android:text="Weather Forecast" />
+                android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
 
@@ -97,11 +97,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:textStyle="bold"
                 android:background="@drawable/card_background"
+                android:gravity="center"
+                android:text="Announcements"
                 android:textSize="18sp"
-                android:text="Announcements" />
+                android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
 
@@ -115,11 +115,11 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:textStyle="bold"
                 android:background="@drawable/card_background"
+                android:gravity="center"
+                android:text="Document Library"
                 android:textSize="18sp"
-                android:text="Document Library" />
+                android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
 
@@ -133,15 +133,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:textStyle="bold"
                 android:background="@drawable/card_background"
+                android:gravity="center"
+                android:text="Location Services"
                 android:textSize="18sp"
-                android:text="Location Services" />
+                android:textStyle="bold" />
 
         </androidx.cardview.widget.CardView>
-
-        <!-- Add more CardViews for other features -->
 
 
     </GridLayout>
