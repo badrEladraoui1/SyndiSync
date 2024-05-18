@@ -40,6 +40,14 @@ public class Login extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
+        // Check if user is signed in (non-null) and update UI accordingly.
+        if (mAuth.getCurrentUser() != null) {
+            // User is signed in, redirect to home page
+            startActivity(new Intent(Login.this, HomePage.class));
+            finish();
+            return;
+        }
+
         setContentView(R.layout.activity_login);
 
         signInButton = findViewById(R.id.signIn);

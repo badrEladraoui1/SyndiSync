@@ -39,6 +39,8 @@ dependencies {
     // Splash API :
     implementation("androidx.core:core-splashscreen:1.0.1")
 
+    implementation("com.google.android.gms:play-services-maps:18.2.0")
+
     implementation(platform("com.google.firebase:firebase-bom:32.8.1"))
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-auth")

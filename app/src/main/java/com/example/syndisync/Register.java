@@ -25,6 +25,10 @@ public class Register extends AppCompatActivity {
     TextView signInRedirectionText;
     EditText emailInput, passwordInput;
     Button registerButton;
+    EditText nameInput;
+    EditText phoneInput;
+    EditText apartmentNumberInput;
+    EditText buildingNumberInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +39,10 @@ public class Register extends AppCompatActivity {
         emailInput = findViewById(R.id.editTextTextEmailAddress);
         passwordInput = findViewById(R.id.editTextTextPassword);
         registerButton = findViewById(R.id.registerBtn);
-        EditText nameInput = findViewById(R.id.editTextTextName);
-        EditText phoneInput = findViewById(R.id.editTextPhone);
-        EditText apartmentNumberInput = findViewById(R.id.editApartmentNumber);
-        EditText buildingNumberInput = findViewById(R.id.editBuildingNumber);
+        nameInput = findViewById(R.id.editTextTextName);
+        phoneInput = findViewById(R.id.editTextPhone);
+        apartmentNumberInput = findViewById(R.id.editApartmentNumber);
+        buildingNumberInput = findViewById(R.id.editBuildingNumber);
 
         // redirect to sign in page from register page
         signInRedirectionText.setOnClickListener(v -> {
@@ -50,6 +54,7 @@ public class Register extends AppCompatActivity {
 
 
         registerButton.setOnClickListener(v -> {
+
             String email = emailInput.getText().toString();
             String password = passwordInput.getText().toString();
             String name = nameInput.getText().toString();

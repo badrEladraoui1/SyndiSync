@@ -38,17 +38,16 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/dashboard_adminName"
+                    android:id="@+id/userName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/myDashboard"
                     android:layout_alignEnd="@id/myDashboard"
                     android:layout_marginTop="-20dp"
-                    android:text="Mr/Mme "
-                    android:textColor="#00b9db"
+                    android:text="User"
+                    android:textColor="#ffff"
                     android:textSize="15sp"
-                    android:textStyle="bold"
-                    tools:ignore="HardcodedText,TextContrastCheck" />
+                    android:textStyle="bold" />
 
                 <ImageView
                     android:layout_width="70dp"
@@ -172,6 +171,7 @@
                     app:cardElevation="7dp">
 
                     <LinearLayout
+                        android:id="@+id/mapCard"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="2dp"
