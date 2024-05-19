@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,6 +21,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class HomePage extends AppCompatActivity {
 
     LinearLayout cardMap;
+    LinearLayout announcementCard;
+    LinearLayout weather;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,6 +109,8 @@ public class HomePage extends AppCompatActivity {
         });
 
         cardMap = findViewById(R.id.mapCard);
+        announcementCard = findViewById(R.id.announcemntCard);
+        weather = findViewById(R.id.weather);
 
         cardMap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -114,6 +120,21 @@ public class HomePage extends AppCompatActivity {
             }
         });
 
+        announcementCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, Announcements.class));
+                Log.w(TAG, "Redirecting to Announcement page");
+            }
+        });
+
+        weather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, Weather.class));
+                Log.w(TAG, "Redirecting to Weather page");
+            }
+        });
 
 
     }

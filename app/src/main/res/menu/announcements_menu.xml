@@ -1,0 +1,14 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menu_home"
+        android:icon="@drawable/ic_action_view_ann"
+        android:title="add announcement" />
+    <item
+        android:id="@+id/menu_contact"
+        android:icon="@drawable/ic_action_add_ann"
+        android:title="view announcements" />
+    <item
+        android:id="@+id/menu_signout"
+        android:icon="@drawable/ic_action_go_back_ann"
+        android:title="go back" />
+</menu>

@@ -78,6 +78,7 @@ public class Register extends AppCompatActivity {
                                 user.put("phone", phone);
                                 user.put("apartmentNumber", apartmentNumber);
                                 user.put("buildingNumber", buildingNumber);
+                                user.put("role", "user");
 
 
                                 db.collection("users")
