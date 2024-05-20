@@ -18,4 +18,5 @@
     <string name="i_need_an_account_sign_up">i need an account Sign Up</string>
     <string name="google_maps">Google Maps</string>
     <string name="googlemap">googleMap</string>
+    <string name="document_image">document_image</string>
 </resources>

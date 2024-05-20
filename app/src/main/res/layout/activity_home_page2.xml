@@ -228,6 +228,7 @@
                     app:cardElevation="7dp">
 
                     <LinearLayout
+                        android:id="@+id/documents"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="2dp"

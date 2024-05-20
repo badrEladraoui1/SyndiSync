@@ -23,6 +23,7 @@ public class HomePage extends AppCompatActivity {
     LinearLayout cardMap;
     LinearLayout announcementCard;
     LinearLayout weather;
+    LinearLayout documetnsCard;
 
 
     @Override
@@ -111,6 +112,7 @@ public class HomePage extends AppCompatActivity {
         cardMap = findViewById(R.id.mapCard);
         announcementCard = findViewById(R.id.announcemntCard);
         weather = findViewById(R.id.weather);
+        documetnsCard = findViewById(R.id.documents);
 
         cardMap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,6 +135,14 @@ public class HomePage extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(HomePage.this, Weather.class));
                 Log.w(TAG, "Redirecting to Weather page");
+            }
+        });
+
+        documetnsCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, Documents.class));
+                Log.w(TAG, "Redirecting to Documents page");
             }
         });
 
