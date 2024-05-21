@@ -33,32 +33,22 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.Docume
         return new DocumentViewHolder(view);
     }
 
-//    @Override
-//    public void onBindViewHolder(@NonNull DocumentViewHolder holder, int position) {
-//        Document document = documents.get(position);
-//        holder.bind(document);
-//    }
-
     @Override
     public int getItemCount() {
         return documents.size();
     }
 
     static class DocumentViewHolder extends RecyclerView.ViewHolder {
-//        private TextView nameTextView;
-//        private TextView urlTextView;
+
         private ImageView documentImageView; // Add this line
 
         public DocumentViewHolder(@NonNull View itemView) {
             super(itemView);
-//            nameTextView = itemView.findViewById(R.id.nameTextView);
-//            urlTextView = itemView.findViewById(R.id.urlTextView);
+
             documentImageView = itemView.findViewById(R.id.documentImageView); // Add this line
         }
 
         public void bind(Document document) {
-//            nameTextView.setText(document.getName());
-//            urlTextView.setText(document.getUrl());
 
             // Load the image into the ImageView
             Glide.with(itemView.getContext())

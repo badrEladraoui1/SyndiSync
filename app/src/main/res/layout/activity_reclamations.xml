@@ -63,6 +63,7 @@
                 android:id="@+id/submit_reclamation_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:background="@drawable/reclamation_gradient"
                 android:text="Submit" />
 
             <androidx.recyclerview.widget.RecyclerView

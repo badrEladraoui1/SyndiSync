@@ -89,18 +89,11 @@ public class Announcements extends AppCompatActivity {
                     // Get the announcement details
                     Map<String, Object> announcement = document.getData();
 
-//                    // Create a new TextView for the announcement
-//                    TextView newAnnouncement = new TextView(Announcements.this);
-//                    String postedBy = "Posted by\t:\t" +"\t"+ announcement.get("username") + "\n";
-//                    String title = "Title\t:\t" +"\t"+ announcement.get("title") + "\n";
-//                    String content = "Content\t:\t" +"\t"+ announcement.get("content");
-//                    newAnnouncement.setText(postedBy + title + content);
-
                     // Create a new TextView for the announcement
                     TextView newAnnouncement = new TextView(Announcements.this);
 
-                    String postedBy = "Posted by\t:\t" +"\t"+ announcement.get("username") + "\n";
-                    String title = "Title\t:\t" +"\t"+ announcement.get("title") + "\n";
+                    String postedBy = "Posted by\t:\t" +"\t"+ announcement.get("username") + "\n\n";
+                    String title = "Title\t:\t" +"\t"+ announcement.get("title") + "\n\n";
                     String content = "Content\t:\t" +"\t"+ announcement.get("content");
 
                     SpannableString spannablePostedBy = new SpannableString(postedBy);
@@ -110,8 +103,8 @@ public class Announcements extends AppCompatActivity {
                     ForegroundColorSpan redColorSpan = new ForegroundColorSpan(Color.RED);
 
                     spannablePostedBy.setSpan(redColorSpan, 0, "Posted by".length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    spannableTitle.setSpan(redColorSpan, 0, "Title".length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                    spannableContent.setSpan(redColorSpan, 0, "Content".length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    spannableTitle.setSpan(redColorSpan, "Title\t:\t".length(), title.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    spannableContent.setSpan(redColorSpan, "Content\t:\t".length(), content.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
 
                     newAnnouncement.setText(TextUtils.concat(spannablePostedBy, spannableTitle, spannableContent));
 
