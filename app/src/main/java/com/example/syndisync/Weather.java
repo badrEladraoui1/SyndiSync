@@ -139,55 +139,95 @@ public class Weather extends AppCompatActivity {
         }
 
 
-        @Override
-        protected void onPostExecute(String result) {
-            if (result != null) {
-                try {
-                    JSONObject jsonObject = new JSONObject(result);
-                    JSONArray list = jsonObject.getJSONArray("list");
+//        @Override
+//        protected void onPostExecute(String result) {
+//            if (result != null) {
+//                try {
+//                    JSONObject jsonObject = new JSONObject(result);
+//                    JSONArray list = jsonObject.getJSONArray("list");
+//
+//                    // Get the weather data for the current day
+//                    JSONObject firstItem = list.getJSONObject(0);
+//                    JSONObject main = firstItem.getJSONObject("main");
+//                    JSONObject wind = firstItem.getJSONObject("wind");
+//                    JSONArray weather = firstItem.getJSONArray("weather");
+//                    String dt_txt = firstItem.getString("dt_txt");
+//                    double temp = main.getDouble("temp");
+//                    double feels_like = main.getDouble("feels_like");
+//                    String weatherMain = weather.getJSONObject(0).getString("main");
+//                    double speed = wind.getDouble("speed");
+//
+//                    // Update the TextViews for the current day
+//                    weatherTimeDt_txt1.setText(dt_txt);
+//                    weatherTempCurrent1.setText(String.valueOf(temp));
+//                    weatherFeelsLikeCurrent1.setText(String.valueOf(feels_like));
+//                    weatherMain1.setText(weatherMain);
+//                    weatherWindSpeed1.setText(String.valueOf(speed));
+//
+//                    // Get the weather data for the next day
+//                    JSONObject secondItem = list.getJSONObject(1); // Change this index based on your data
+//                    main = secondItem.getJSONObject("main");
+//                    wind = secondItem.getJSONObject("wind");
+//                    weather = secondItem.getJSONArray("weather");
+//                    dt_txt = secondItem.getString("dt_txt");
+//                    temp = main.getDouble("temp");
+//                    feels_like = main.getDouble("feels_like");
+//                    weatherMain = weather.getJSONObject(0).getString("main");
+//                    speed = wind.getDouble("speed");
+//
+//                    // Update the TextViews for the next day
+//                    weatherTimeDt_txt2.setText(dt_txt);
+//                    weatherTempCurrent2.setText(String.valueOf(temp));
+//                    weatherFeelsLikeCurrent2.setText(String.valueOf(feels_like));
+//                    weatherMain2.setText(weatherMain);
+//                    weatherWindSpeed2.setText(String.valueOf(speed));
+//
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//            } else {
+//                Toast.makeText(Weather.this, "Error fetching weather data", Toast.LENGTH_SHORT).show();
+//            }
+//        }
+@Override
+protected void onPostExecute(String result) {
+    if (result != null) {
+        try {
+            JSONObject jsonObject = new JSONObject(result);
+            JSONArray list = jsonObject.getJSONArray("list");
 
-                    // Get the weather data for the current day
-                    JSONObject firstItem = list.getJSONObject(0);
-                    JSONObject main = firstItem.getJSONObject("main");
-                    JSONObject wind = firstItem.getJSONObject("wind");
-                    JSONArray weather = firstItem.getJSONArray("weather");
-                    String dt_txt = firstItem.getString("dt_txt");
-                    double temp = main.getDouble("temp");
-                    double feels_like = main.getDouble("feels_like");
-                    String weatherMain = weather.getJSONObject(0).getString("main");
-                    double speed = wind.getDouble("speed");
+            // Get the weather data for the next five forecasts
+            for (int i = 0; i < 9; i++) { // Change this to 7 to include the current and next day plus five more forecasts
+                JSONObject forecastItem = list.getJSONObject(i);
+                JSONObject main = forecastItem.getJSONObject("main");
+                JSONObject wind = forecastItem.getJSONObject("wind");
+                JSONArray weather = forecastItem.getJSONArray("weather");
+                String dt_txt = forecastItem.getString("dt_txt");
+                double temp = main.getDouble("temp");
+                double feels_like = main.getDouble("feels_like");
+                String weatherMain = weather.getJSONObject(0).getString("main");
+                double speed = wind.getDouble("speed");
 
-                    // Update the TextViews for the current day
-                    weatherTimeDt_txt1.setText(dt_txt);
-                    weatherTempCurrent1.setText(String.valueOf(temp));
-                    weatherFeelsLikeCurrent1.setText(String.valueOf(feels_like));
-                    weatherMain1.setText(weatherMain);
-                    weatherWindSpeed1.setText(String.valueOf(speed));
+                // Update the TextViews for the forecast
+                // Replace these IDs with the IDs of your actual TextViews
+                TextView weatherTimeDt_txt = findViewById(getResources().getIdentifier("weatherTimeDt_txt" + (i + 1), "id", getPackageName()));
+                TextView weatherTempCurrent = findViewById(getResources().getIdentifier("weatherTempCurrent" + (i + 1), "id", getPackageName()));
+                TextView weatherFeelsLikeCurrent = findViewById(getResources().getIdentifier("weatherFeelsLikeCurrent" + (i + 1), "id", getPackageName()));
+                TextView weatherMainTextView = findViewById(getResources().getIdentifier("weatherMain" + (i + 1), "id", getPackageName()));
+                TextView weatherWindSpeed = findViewById(getResources().getIdentifier("weatherWindSpeed" + (i + 1), "id", getPackageName()));
 
-                    // Get the weather data for the next day
-                    JSONObject secondItem = list.getJSONObject(1); // Change this index based on your data
-                    main = secondItem.getJSONObject("main");
-                    wind = secondItem.getJSONObject("wind");
-                    weather = secondItem.getJSONArray("weather");
-                    dt_txt = secondItem.getString("dt_txt");
-                    temp = main.getDouble("temp");
-                    feels_like = main.getDouble("feels_like");
-                    weatherMain = weather.getJSONObject(0).getString("main");
-                    speed = wind.getDouble("speed");
-
-                    // Update the TextViews for the next day
-                    weatherTimeDt_txt2.setText(dt_txt);
-                    weatherTempCurrent2.setText(String.valueOf(temp));
-                    weatherFeelsLikeCurrent2.setText(String.valueOf(feels_like));
-                    weatherMain2.setText(weatherMain);
-                    weatherWindSpeed2.setText(String.valueOf(speed));
-
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            } else {
-                Toast.makeText(Weather.this, "Error fetching weather data", Toast.LENGTH_SHORT).show();
+                weatherTimeDt_txt.setText(dt_txt);
+                weatherTempCurrent.setText(String.valueOf(temp));
+                weatherFeelsLikeCurrent.setText(String.valueOf(feels_like));
+                weatherMainTextView.setText(weatherMain);
+                weatherWindSpeed.setText(String.valueOf(speed));
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+    } else {
+        Toast.makeText(Weather.this, "Error fetching weather data", Toast.LENGTH_SHORT).show();
+    }
+}
     }
 }

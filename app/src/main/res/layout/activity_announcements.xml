@@ -10,8 +10,6 @@
         android:layout_height="match_parent">
 
 
-
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -51,7 +49,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="20sp"
+                android:layout_margin="30sp"
                 android:orientation="vertical">
 
                 <EditText
@@ -64,12 +62,16 @@
                     android:id="@+id/announcementContent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:lines="4"
                     android:hint="Enter Announcement Content"/>
 
                 <Button
                     android:id="@+id/submitAnnouncement"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/button_ann_bg"
+                    android:layout_gravity="start"
+                    android:padding="10sp"
                     android:text="Submit Announcement"/>
             </LinearLayout>
 

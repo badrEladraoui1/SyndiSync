@@ -25,6 +25,8 @@ public class HomePage extends AppCompatActivity {
     LinearLayout weather;
     LinearLayout documetnsCard;
 
+    LinearLayout complaints;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,6 +115,7 @@ public class HomePage extends AppCompatActivity {
         announcementCard = findViewById(R.id.announcemntCard);
         weather = findViewById(R.id.weather);
         documetnsCard = findViewById(R.id.documents);
+        complaints = findViewById(R.id.complaints);
 
         cardMap.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -143,6 +146,14 @@ public class HomePage extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(HomePage.this, Documents.class));
                 Log.w(TAG, "Redirecting to Documents page");
+            }
+        });
+
+        complaints.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(HomePage.this, Reclamations.class));
+                Log.w(TAG, "Redirecting to Reclamations page");
             }
         });
 

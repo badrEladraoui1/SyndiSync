@@ -45,20 +45,20 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.Docume
     }
 
     static class DocumentViewHolder extends RecyclerView.ViewHolder {
-        private TextView nameTextView;
-        private TextView urlTextView;
+//        private TextView nameTextView;
+//        private TextView urlTextView;
         private ImageView documentImageView; // Add this line
 
         public DocumentViewHolder(@NonNull View itemView) {
             super(itemView);
-            nameTextView = itemView.findViewById(R.id.nameTextView);
-            urlTextView = itemView.findViewById(R.id.urlTextView);
+//            nameTextView = itemView.findViewById(R.id.nameTextView);
+//            urlTextView = itemView.findViewById(R.id.urlTextView);
             documentImageView = itemView.findViewById(R.id.documentImageView); // Add this line
         }
 
         public void bind(Document document) {
-            nameTextView.setText(document.getName());
-            urlTextView.setText(document.getUrl());
+//            nameTextView.setText(document.getName());
+//            urlTextView.setText(document.getUrl());
 
             // Load the image into the ImageView
             Glide.with(itemView.getContext())

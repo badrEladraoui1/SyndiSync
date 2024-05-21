@@ -5,6 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.TextUtils;
+import android.text.style.ForegroundColorSpan;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
@@ -85,15 +89,37 @@ public class Announcements extends AppCompatActivity {
                     // Get the announcement details
                     Map<String, Object> announcement = document.getData();
 
+//                    // Create a new TextView for the announcement
+//                    TextView newAnnouncement = new TextView(Announcements.this);
+//                    String postedBy = "Posted by\t:\t" +"\t"+ announcement.get("username") + "\n";
+//                    String title = "Title\t:\t" +"\t"+ announcement.get("title") + "\n";
+//                    String content = "Content\t:\t" +"\t"+ announcement.get("content");
+//                    newAnnouncement.setText(postedBy + title + content);
+
                     // Create a new TextView for the announcement
                     TextView newAnnouncement = new TextView(Announcements.this);
-                    newAnnouncement.setText(announcement.get("username") + "\n" + announcement.get("title") + "\n" + announcement.get("content"));
+
+                    String postedBy = "Posted by\t:\t" +"\t"+ announcement.get("username") + "\n";
+                    String title = "Title\t:\t" +"\t"+ announcement.get("title") + "\n";
+                    String content = "Content\t:\t" +"\t"+ announcement.get("content");
+
+                    SpannableString spannablePostedBy = new SpannableString(postedBy);
+                    SpannableString spannableTitle = new SpannableString(title);
+                    SpannableString spannableContent = new SpannableString(content);
+
+                    ForegroundColorSpan redColorSpan = new ForegroundColorSpan(Color.RED);
+
+                    spannablePostedBy.setSpan(redColorSpan, 0, "Posted by".length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    spannableTitle.setSpan(redColorSpan, 0, "Title".length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    spannableContent.setSpan(redColorSpan, 0, "Content".length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+                    newAnnouncement.setText(TextUtils.concat(spannablePostedBy, spannableTitle, spannableContent));
 
                     newAnnouncement.setTextColor(Color.BLACK);
                     newAnnouncement.setTextSize(TypedValue.COMPLEX_UNIT_SP, 18);
                     newAnnouncement.setPadding(16, 16, 16, 16);
-                    newAnnouncement.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                    newAnnouncement.setBackgroundColor(Color.LTGRAY);
+                    newAnnouncement.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
+                    newAnnouncement.setBackgroundColor(Color.WHITE);
                     newAnnouncement.setTypeface(Typeface.DEFAULT_BOLD);
                     LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(
                             LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
