@@ -9,6 +9,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
@@ -51,7 +52,8 @@ public class Announcements extends AppCompatActivity {
                 // Get the current user's ID and username
                 FirebaseUser user = mAuth.getCurrentUser();
                 String userId = user.getUid();
-                String username = user.getEmail(); // This assumes that the username is stored as the email in Firebase Auth
+                Log.d("TAG", "onClick: "+userId);
+                String username = user.getEmail();
 
                 // Create a new object for the announcement
                 Map<String, Object> announcement = new HashMap<>();

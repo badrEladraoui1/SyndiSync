@@ -51,7 +51,6 @@ public class Documents extends AppCompatActivity {
         // Initialize RecyclerView
         RecyclerView documentsRecyclerView = findViewById(R.id.documentsRecyclerView);
         documentsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        // TODO: Set the adapter for the RecyclerView
         // Initialize the adapter with an empty list of documents
         documentAdapter = new DocumentAdapter(new ArrayList<>());
         documentsRecyclerView.setAdapter(documentAdapter);

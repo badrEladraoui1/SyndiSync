@@ -307,7 +307,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Weather in 9 hours : :"
+                        android:text="Weather in 9 hours : "
                         android:textColor="#a3d4f7"
                         android:textSize="25sp"
                         android:textStyle="bold" />

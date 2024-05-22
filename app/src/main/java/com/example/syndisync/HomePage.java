@@ -24,7 +24,6 @@ public class HomePage extends AppCompatActivity {
     LinearLayout announcementCard;
     LinearLayout weather;
     LinearLayout documetnsCard;
-
     LinearLayout complaints;
 
 

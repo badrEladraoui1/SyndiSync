@@ -29,7 +29,6 @@ public class Reclamations extends AppCompatActivity {
 
     private EditText reclamationDescription;
     private Button submitReclamationButton;
-
     private List<CharSequence> reclamationList = new ArrayList<>();
     private RecyclerView recyclerView;
     private ReclamationAdapter adapter; // This is a custom adapter that you need to create
